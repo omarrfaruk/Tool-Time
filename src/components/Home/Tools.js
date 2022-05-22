@@ -5,7 +5,7 @@ import SingleTools from './SingleTools';
 const Tools = () => {
 
 
-    const { data } = useQuery('products', () => fetch('products.json').then(res => res.json()))
+    const { data } = useQuery('products', () => fetch('http://localhost:5000/product').then(res => res.json()))
 
     return (
         <div className='my-16 mx-12'>

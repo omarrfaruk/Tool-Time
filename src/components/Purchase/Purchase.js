@@ -1,0 +1,91 @@
+import React, { useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+import { useParams } from 'react-router-dom';
+import background from '../../assests/images/Banner-Wrenches.jpg'
+import PurchaseModal from './PurchaseModal';
+
+const Purchase = () => {
+    const { id } = useParams()
+    const [details, setDetails] = useState({})
+    const [total, setTotal] = useState(0)
+
+    const orderQuantity = parseInt(total)
+
+    useEffect(() => {
+        const url = `http://localhost:5000/product/${id}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setDetails(data)
+            })
+    }, [id])
+
+    const handleQuantity = e => {
+        e.preventDefault()
+        const inputValue = e.target.quantity.value;
+        setTotal(inputValue)
+        // if (inputValue < details.Minimum) {
+        //     toast.error(`Quantity Must Be `)
+        // }
+        // else if (inputValue > details.available) {
+        //     toast.error(`You Can't Order More Than Stock`)
+        // }
+        // else {
+        //     toast.success('Congretulation')
+        // }
+    }
+
+    return (
+        <div>
+            <div style=
+                {{
+                    backgroundImage: `url(${background})`,
+                    height: '50vh',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+
+                }}>
+                <h1 className='text-5xl font-serif font-bold sm:pt-10 lg:pl-60 lg:pt-40 text-white'>{details.name}</h1>
+            </div>
+            <div class="w-4/5 mx-auto mt-28 mb-20 rounded bg-slate-300">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div className=' rounded lg:w-2/4 bg-white'>
+                        <img src={details.img} alt='' class=" rounded-lg " />
+                    </div>
+                    <div className=' lg:w-2/4 font-serif lg:mr-60'>
+                        <h1 class="text-3xl font-bold">{details.name}</h1>
+                        <p class="py-6">{details.description}</p>
+                        <p><small>Price: {details.price}</small></p>
+                        <p><small>Available: {details.available}</small></p>
+                        <p><small>Minimum Order: {details.Minimum}</small></p>
+                        <p className='mt-5'>Add Quantity</p>
+                        <form onSubmit={handleQuantity}>
+                            <input type="number" name="quantity" id="" />
+                            <input type="submit" className='btn btn-outline btn-xs' value='Add' id="" />
+                        </form>
+                        <br />
+                        {
+                            orderQuantity > details.Minimum && orderQuantity <= details.available ?
+                                <label
+                                    for="purchase-modal"
+                                    class="btn btn-outline btn-sm">PURCHASE
+                                </label>
+                                :
+                                <label
+                                    disabled
+                                    for="purchase-modal"
+                                    class="btn btn-outline btn-sm">PURCHASE
+                                </label>
+                        }
+                    </div>
+                    <Toaster></Toaster>
+                </div>
+            </div>
+            {
+                details && <PurchaseModal orderQuantity={orderQuantity} details={details} ></PurchaseModal>
+            }
+        </div >
+    );
+};
+
+export default Purchase;
