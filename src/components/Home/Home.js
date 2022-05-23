@@ -5,6 +5,8 @@ import Summary from './Summary';
 import Tools from './Tools';
 import Choose from './Choose';
 import CustomerBase from './CustomerBase';
+import Navbar from '../Shared/Navbar';
+import Footer from '../Shared/Footer';
 
 const Home = () => {
     return (
@@ -15,6 +17,7 @@ const Home = () => {
             <Summary></Summary>
             <CustomerBase></CustomerBase>
             <Reviews></Reviews>
+            <Footer></Footer>
         </div>
     );
 };

@@ -24,10 +24,13 @@ const Navbar = ({ children }) => {
                         </label>
                     </div>
                     <div class="px-2 mx-2 text-2xl font-bold font-serif">Tool Time</div>
-                    <div class=" mx-auto lg:block">
+                    <div class=" mx-auto hidden lg:block">
                         <ul class="menu menu-horizontal">
                             {/* <!-- Navbar menu content here --> */}
                             <li><NavLink to='/'>Home</NavLink></li>
+                            {
+                                user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+                            }
                             <li><NavLink to='/register'>Register</NavLink></li>
                             {
                                 user ?
@@ -37,7 +40,7 @@ const Navbar = ({ children }) => {
                             }
                         </ul>
                     </div>
-                    <p>
+                    <p className='hidden lg:block'>
                         {user && user?.displayName}
                     </p>
                 </div>
@@ -49,8 +52,16 @@ const Navbar = ({ children }) => {
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
                     {/* <!-- Sidebar content here --> */}
                     <li><NavLink to='/'>Home</NavLink></li>
+                    {
+                        user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+                    }
                     <li><NavLink to='/register'>Register</NavLink></li>
-                    <li><NavLink to='/login'>Login</NavLink></li>
+                    {
+                        user ?
+                            <li><button onClick={logOut}>Sign Out</button></li>
+                            :
+                            <li><NavLink to='/login'>Login</NavLink></li>
+                    }
 
                 </ul>
 

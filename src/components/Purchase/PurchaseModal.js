@@ -2,15 +2,18 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
+
 const PurchaseModal = ({ details, orderQuantity }) => {
     const [user] = useAuthState(auth)
 
     const handleModal = (e) => {
         e.preventDefault()
         const orderDetails = {
+            productName: details.name,
             customerName: user.displayName,
             customerEmail: user.email,
             orderQuantity,
+            price: details.price * orderQuantity,
             address: e.target.address.value,
             phone: e.target.number.value
 
@@ -44,6 +47,7 @@ const PurchaseModal = ({ details, orderQuantity }) => {
                         <input type="text" value={user?.displayName} readOnly class="input input-bordered w-full  max-w-xs" />
                         <input type="text" value={user?.email} readOnly class="input input-bordered w-full max-w-xs" />
                         <input type="text" name='quantity' value={orderQuantity + 'pcs'} class="input input-bordered w-full  max-w-xs" />
+                        <input type="text" name='price' value={'Price:$' + orderQuantity * details.price} class="input input-bordered w-full  max-w-xs" />
                         <input type="text" name='address' placeholder="Address" class="input input-bordered w-full   max-w-xs" />
                         <input type="text" name='number' placeholder="Contact Number" class="input input-bordered w-full max-w-xs" />
                         <input type="submit" value='Place Order' class="input input-bordered  hover:bg-slate-400 hover:text-white font-bold w-full max-w-xs" />
