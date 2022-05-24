@@ -43,13 +43,33 @@ const PurchaseModal = ({ details, orderQuantity }) => {
                 <div class="modal-box mx-auto">
                     <label for="purchase-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 class="font-bold text-center mb-5 text-2xl">{details?.name}</h3>
-                    <form onSubmit={handleModal} className='grid grid-cols-1 gap-6 justify-items-center'>
-                        <input type="text" value={user?.displayName} readOnly class="input input-bordered w-full  max-w-xs" />
-                        <input type="text" value={user?.email} readOnly class="input input-bordered w-full max-w-xs" />
-                        <input type="text" name='quantity' value={orderQuantity + 'pcs'} class="input input-bordered w-full  max-w-xs" />
-                        <input type="text" name='price' value={'Price:$' + orderQuantity * details.price} class="input input-bordered w-full  max-w-xs" />
-                        <input type="text" name='address' placeholder="Address" class="input input-bordered w-full   max-w-xs" />
-                        <input type="text" name='number' placeholder="Contact Number" class="input input-bordered w-full max-w-xs" />
+                    <form onSubmit={handleModal} className='grid grid-cols-1  justify-items-center'>
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Name</span>
+                            </label>
+                            <input type="text" value={user?.displayName} readOnly class="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Email</span>
+                            </label>
+                            <input type="text" value={user?.email} readOnly class="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Quantity</span>
+                            </label>
+                            <input type="text" name='quantity' value={orderQuantity + 'pcs'} class="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Total Price</span>
+                            </label>
+                            <input type="text" name='price' value={'Price:$' + orderQuantity * details.price} class="input input-bordered w-full max-w-xs" />
+                        </div>
+                        <input type="text" name='address' placeholder="Address" class="input my-3 input-bordered w-full   max-w-xs" />
+                        <input type="text" name='number' placeholder="Contact Number" class="input mb-2 input-bordered w-full max-w-xs" />
                         <input type="submit" value='Place Order' class="input input-bordered  hover:bg-slate-400 hover:text-white font-bold w-full max-w-xs" />
                     </form>
                 </div>

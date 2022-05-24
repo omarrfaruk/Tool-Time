@@ -3,15 +3,13 @@ import banner from '../../assests/images/images.jpg'
 
 const HomeBanner = () => {
     return (
-        // <div>
-        //     <img className='w-full h-[90vh]' src={banner} alt="" />
-        // </div>
         <div class="hero min-h-screen" style={{ backgroundImage: `url(${banner})` }}>
-            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-overlay bg-opacity-40"></div>
             <div class="hero-content text-center text-neutral-content">
-                <div class="max-w-md">
-                    <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-                    <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <div className=''>
+                    <h1 class="mb-5 font-sans text-6xl font-bold uppercase">Customized Solutions</h1>
+                    <p className='text-3xl'>Choose, organise & customise</p>
+                    <p class="mb-5 text-3xl">Your tool Trolly</p>
                     <button class="btn btn-primary">Get Started</button>
                 </div>
             </div>

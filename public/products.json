@@ -1,56 +1,51 @@
 [
     {
-        "name": "Crimp Screwdriver",
+        "name": "Adjustable Wrench",
         "img": "https://i.ibb.co/QktfGyM/Adjustable-Wrenches-2.png",
-        "description": "A slotted flat blade screwdriver is a long standard hand-tool dating back to the 1500s. It has a flat-bladed tip used to turn, fasten or loosen screws and bolts. The flat blade screwdriver is an extremely versatile tool and is used for fasteners of all sizes, providing significant leverage.",
-        "price": 14,
-        "Minimum": "500",
-        "available": "10,000"
+        "description": "We are one of the leading Spanners and Wrenches Manufacturers in India. These adjustable spanner wrench are offered with a jaw of adjustable width. Precisely designed as per the international quality standards, these wrenches are widely used for firmly holding various fastener heads such as nuts and bolts to prevent any damage.",
+        "price": 19,
+        "Minimum": "50",
+        "available": "1000"
     },
     {
-        "_id": "623853b2614ad5aba311fdd1",
-        "name": "plier Screwdriver",
-        "img": "https://i.ibb.co/QktfGyM/Adjustable-Wrenches-2.png",
-        "description": "A slotted flat blade screwdriver is a long standard hand-tool dating back to the 1500s. It has a flat-bladed tip used to turn, fasten or loosen screws and bolts. The flat blade screwdriver is an extremely versatile tool and is used for fasteners of all sizes, providing significant leverage.",
-        "price": 14,
-        "Minimum": "500",
-        "available": "10000"
+        "name": "Allen Key",
+        "img": "https://i.ibb.co/GtyhK2s/ALLEN-KEY-SET-TORX.png",
+        "description": "Alok Tools is engaged in the manufacturing, supplying, trading and exporting of optimum quality adjustable Spanner wrench. Offered tools are precisely engineered under the guidance of our expert professionals in compliance with the industry laid parameters. Our hand tools product range includes Spanners and Wrenches and are widely demanded in automobile and construction industries.",
+        "price": 15,
+        "Minimum": "100",
+        "available": "3000"
     },
     {
-        "_id": "623853b2614ad5aba311fdd1",
-        "name": "scissors Screwdriver",
-        "img": "https://i.ibb.co/QktfGyM/Adjustable-Wrenches-2.png",
-        "description": "A slotted flat blade screwdriver is a long standard hand-tool dating back to the 1500s. It has a flat-bladed tip used to turn, fasten or loosen screws and bolts. The flat blade screwdriver is an extremely versatile tool and is used for fasteners of all sizes, providing significant leverage.",
-        "price": 14,
-        "Minimum": "500",
-        "available": "10,000"
+        "name": "Cable Cutter",
+        "img": "https://i.ibb.co/RB4jnvD/Cable-cutter.png",
+        "description": "Here's our quick take on the streaming services you will need to keep you entertained and whether eliminating cable is right for you. Here’s where it all begins: You’re sick of paying an exorbitant cable or satellite bill, and you have a strong sense that if you just limited your spending to a few streaming subscription services",
+        "price": 24,
+        "Minimum": "10",
+        "available": "500"
     },
     {
-        "_id": "623853b2614ad5aba311fdd1",
-        "name": "Circlip Screwdriver",
-        "img": "https://i.ibb.co/QktfGyM/Adjustable-Wrenches-2.png",
+        "name": "Combination-piler",
+        "img": "https://i.ibb.co/PZdv7rW/Combination-Plier-Heavy-Duty.jpg",
         "description": "A slotted flat blade screwdriver is a long standard hand-tool dating back to the 1500s. It has a flat-bladed tip used to turn, fasten or loosen screws and bolts. The flat blade screwdriver is an extremely versatile tool and is used for fasteners of all sizes, providing significant leverage.",
-        "price": 14,
-        "Minimum": "500",
-        "available": "10,000"
+        "price": 35,
+        "Minimum": "100",
+        "available": "1000"
     },
     {
-        "_id": "623853b2614ad5aba311fdd1",
-        "name": " Penknife Screwdriver",
-        "img": "https://i.ibb.co/QktfGyM/Adjustable-Wrenches-2.png",
-        "description": "A slotted flat blade screwdriver is a long standard hand-tool dating back to the 1500s. It has a flat-bladed tip used to turn, fasten or loosen screws and bolts. The flat blade screwdriver is an extremely versatile tool and is used for fasteners of all sizes, providing significant leverage.",
-        "price": 14,
-        "Minimum": "500",
-        "available": "10,000"
+        "name": " Dad-Blow-Hammer",
+        "img": "https://i.ibb.co/t8T38dv/Dad-blow-Hammer-1.png",
+        "description": "Hammer drills and rotary hammers are both excellent for drilling masonry. Rotary hammers are more powerful, though, and have a “hammer-only” mode with no rotation. They usually have an SDS chuck, which is better for hammering.",
+        "price": 55,
+        "Minimum": "10",
+        "available": "500"
     },
     {
-        "_id": "623853b2614ad5aba311fdd1",
-        "name": " Penknife Screwdriver",
-        "img": "https://i.ibb.co/QktfGyM/Adjustable-Wrenches-2.png",
-        "description": "A slotted flat blade screwdriver is a long standard hand-tool dating back to the 1500s. It has a flat-bladed tip used to turn, fasten or loosen screws and bolts. The flat blade screwdriver is an extremely versatile tool and is used for fasteners of all sizes, providing significant leverage.",
-        "price": 14,
-        "Minimum": "500",
-        "available": "10,000"
+        "name": " Pipe Wrenches",
+        "img": "https://i.ibb.co/xjZcqs4/pipe-wrenches-HD.png",
+        "description": "Hammer drills and rotary hammers (also called rotary hammer drills) both produce a pounding force that makes them extremely efficient at blasting through masonry. As the hammer drill spins, the bit chisels away at the masonry. The mechanical process that delivers this pounding action is what separates the two tools.",
+        "price": 35,
+        "Minimum": "15",
+        "available": "2000"
     },
     {
         "name": " Penknife Screwdriver",

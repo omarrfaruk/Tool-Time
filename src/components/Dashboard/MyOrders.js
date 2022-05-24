@@ -1,13 +1,40 @@
-import React from 'react';
-import { useQuery } from 'react-query';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 
 const MyOrders = () => {
 
-    const { data, isLoading } = useQuery('orders', () => fetch('http://localhost:5000/orders').then(res => res.json()))
+    const [user] = useAuthState(auth)
 
-    if (isLoading) {
-        return <Loading></Loading>
+    // get all orders
+    const customerEmail = user?.email;
+
+
+    const [orders, setOrders] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders?email=${customerEmail}`)
+            .then(res => res.json())
+            .then(data => setOrders(data))
+    }, [customerEmail])
+
+
+
+
+    // delete a order
+    const handleDelete = id => {
+        const sure = window.confirm('Are You Sure?')
+        if (sure) {
+            const url = `http://localhost:5000/orders/${id}`
+            fetch(url, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+        }
+
     }
 
 
@@ -27,13 +54,15 @@ const MyOrders = () => {
                 </thead>
                 <tbody>
                     {
-                        data?.map(d => <tr>
+                        orders?.map(d => <tr>
                             <th>1</th>
                             <th>{d.productName}</th>
                             <td>{d.orderQuantity}</td>
                             <td>{'$' + d.price}</td>
                             <td><button className='btn btn-sm'>pay</button></td>
-                            <td><button className='btn btn-sm'>Delete</button></td>
+                            <td><button
+                                onClick={() => handleDelete(d._id)}
+                                className='btn btn-sm'>Delete</button></td>
                         </tr>)
                     }
                 </tbody>

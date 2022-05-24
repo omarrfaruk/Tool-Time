@@ -9,6 +9,7 @@ import Register from "./components/Login/Register";
 import Purchase from "./components/Purchase/Purchase";
 import Footer from "./components/Shared/Footer";
 import Navbar from "./components/Shared/Navbar";
+import NotFound from "./components/Shared/NotFound";
 import RequireAuth from "./components/Shared/RequireAuth";
 
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="myprofile" element={<MyProfile />}></Route>
             <Route path="addreview" element={<AddReview />}></Route>
           </Route>
+          <Route path='*' element={<NotFound />}></Route>
         </Routes>
         {/* <Footer></Footer> */}
       </Navbar>
