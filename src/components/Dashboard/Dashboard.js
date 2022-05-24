@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
-        <div class="drawer drawer-mobile bg-red-500">
+        <div class="drawer drawer-mobile shadow-sm bg-gray-200">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content ">
                 {/* <!-- Page content here --> */}
@@ -18,6 +18,10 @@ const Dashboard = () => {
                     <li><Link to='/dashboard'>My Orders</Link></li>
                     <li><Link to='addreview'>Add Review</Link></li>
                     <li><Link to='myprofile'>My Profile</Link></li>
+                    <li><Link to='manageorder'>Manage Order</Link></li>
+                    <li><Link to='addproduct'>Add Product</Link></li>
+                    <li><Link to='makeadmin'>Make Admin</Link></li>
+                    <li><Link to='manageproducts'>Manage Products</Link></li>
                 </ul>
 
             </div>

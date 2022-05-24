@@ -6,7 +6,6 @@ const Tools = () => {
 
 
     const { data } = useQuery('products', () => fetch('http://localhost:5000/product').then(res => res.json()))
-
     return (
         <div className='my-16 mx-20'>
             <h1 className='text-center text-2xl  uppercase font-bold'>Find The Right Tool</h1>

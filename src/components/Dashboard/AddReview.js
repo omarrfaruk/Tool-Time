@@ -36,13 +36,6 @@ const AddReview = () => {
                         className='grid gap-5'>
                         <input type="text" value={user?.displayName} class="input input-bordered w-full max-w-xs" />
                         <textarea type="text" name='Review' placeholder="Write Your Opinion" class="textarea input-bordered w-full max-w-xs" required />
-                        {/* <div class="rating">
-                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
-                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                        </div> */}
                         <input type="submit" class="input btn btn-outline input-bordered w-full max-w-xs" />
                     </form>
                 </div>
