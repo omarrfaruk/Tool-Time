@@ -1,10 +1,15 @@
-import { useQuery } from 'react-query';
+import { useQuery } from 'react-query'; import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import AdminControl from './AdminControl';
 
 const MakeAdmin = () => {
 
-
-    const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/users').then(res => res.json()))
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+        method: "GET",
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>
@@ -18,24 +23,18 @@ const MakeAdmin = () => {
                     <tr>
                         <th></th>
                         <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th></th>
-                        <th></th>
+                        <th>name</th>
+
+                        <th>name</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        users?.map((d, index) => <tr>
-                            <th>{index + 1}</th>
-                            <th>{d.email}</th>
-                            {/* <td>{d.orderQuantity}</td>
-                            <td>{'$' + d.price}</td>
-                            <td><button className='btn btn-sm'>pay</button></td> */}
-                            {/* <td><button
-                                onClick={() => handleDelete(d._id)}
-                                className='btn btn-sm'>Delete</button></td> */}
-                        </tr>)
+                        users?.map((d, index) => <AdminControl
+                            key={d._id}
+                            index={index}
+                            refetch={refetch}
+                            d={d}></AdminControl>)
                     }
                 </tbody>
             </table>

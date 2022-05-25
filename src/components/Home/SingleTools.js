@@ -6,7 +6,7 @@ const SingleTools = ({ tool }) => {
 
 
     return (
-        <div class="card lg:max-w-lg bg-base-100 shadow-xl image-full">
+        <div class="card lg:max-w-lg bg-base-100 shadow-xl">
             <figure><img src={img} alt="" /></figure>
             <div class="card-body">
                 <h2 class="card-title">{name}</h2>
@@ -18,7 +18,7 @@ const SingleTools = ({ tool }) => {
                 <div class="badge badge-outline">Price: ${price}</div>
                 <div class="card-actions justify-center">
                     <button
-                        class="btn bg-red-500">
+                        class="btn btn-outline">
                         <Link to={'purchase/' + _id}>Details</Link>
                     </button>
                 </div>

@@ -15,6 +15,8 @@ import Footer from "./components/Shared/Footer";
 import Navbar from "./components/Shared/Navbar";
 import NotFound from "./components/Shared/NotFound";
 import RequireAuth from "./components/Shared/RequireAuth";
+import { Toaster } from "react-hot-toast";
+import RequireAdmin from "./components/Shared/RequireAdmin";
 
 
 function App() {
@@ -32,13 +34,14 @@ function App() {
             <Route path="addreview" element={<AddReview />}></Route>
             <Route path="manageorder" element={<ManageOrder />}></Route>
             <Route path="addproduct" element={<AddProduct />}></Route>
-            <Route path="makeadmin" element={<MakeAdmin />}></Route>
+            <Route path="makeadmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
             <Route path="manageproducts" element={<ManageProducts />}></Route>
           </Route>
           <Route path='*' element={<NotFound />}></Route>
         </Routes>
         {/* <Footer></Footer> */}
       </Navbar>
+      <Toaster />
     </div>
   );
 }
