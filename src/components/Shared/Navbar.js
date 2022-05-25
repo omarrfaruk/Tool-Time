@@ -1,8 +1,9 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import img from '../../assests/images/cartoon-boy-images-4.jpg'
 
 
 const Navbar = ({ children }) => {
@@ -24,7 +25,9 @@ const Navbar = ({ children }) => {
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                         </label>
                     </div>
-                    <div class="px-2 mx-2 text-2xl font-bold font-serif">Tool Time</div>
+                    <div class="px-2 mx-2 text-2xl font-bold font-serif">
+                        <Link to='/'>Tool Time</Link>
+                    </div>
                     <div class=" mx-auto hidden lg:block">
                         <ul class="menu menu-horizontal">
                             {/* <!-- Navbar menu content here --> */}
@@ -41,9 +44,16 @@ const Navbar = ({ children }) => {
                             }
                         </ul>
                     </div>
-                    <p className='hidden lg:block'>
-                        {user && user?.displayName}
-                    </p>
+                    <Link to='/dashboard'>
+                        <div class="avatar">
+                            <div class="w-8 rounded-full">
+                                <img src={user && (user?.photoURL || img)} alt="" />
+                            </div>
+                        </div>
+                        <p className='hidden lg:block ml-1 mr-4'>
+                            {user && user?.displayName}
+                        </p>
+                    </Link>
                     <label for="my-drawer-3" class="btn btn-square block lg:hidden btn-ghost grid">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </label>

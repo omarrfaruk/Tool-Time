@@ -1,38 +1,42 @@
 import React from 'react';
 import banner from '../../assests/images/tools.jpg'
+import './HomeBanner.css'
 
 const HomeBanner = () => {
     return (
-        // <div class="hero min-h-screen" style={{ backgroundImage: `url(${banner})` }}>
-        //     <div class="hero-overlay bg-opacity-30"></div>
-        //     <div class="hero-content text-center text-neutral-content">
-        //         <div className=''>
-        //             <h1 class="mb-5 font-sans text-6xl font-bold uppercase">Customized Solutions</h1>
-        //             <p className='text-3xl'>Choose, organise & customise</p>
-        //             <p class="mb-5 text-3xl">Your tool Trolly</p>
-        //             <button class="btn btn-primary">Get Started</button>
-        //         </div>
-        //     </div>
-        // </div >
         <div
-            className='bg-opacity-60'
+            className='font'
             style=
             {{
                 backgroundImage: `url(${banner})`,
-                height: '90vh',
+                height: '85vh',
                 width: '100%',
                 backgroundSize: 'cover',
 
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center'
-
+                backgroundPosition: 'center',
             }}
         >
-            <div className='text-right text-white'>
-                <h1 class="mb-5 font-sans text-6xl font-bold uppercase">Customized Solutions</h1>
-                <p className='text-3xl'>Choose, organise & customise</p>
-                <p class="mb-5 text-3xl">Your tool Trolly</p>
-                <button class="btn btn-primary">Get Started</button>
+            <div className=' lg:pt-28 lg:pl-96 text-white'>
+                <h1
+                    data-aos='fade-right'
+                    data-aos-duration='1000'
+                    data-aos-delay='200'
+                    class="mb-5  text-7xl font-bold uppercase">Customized Solutions</h1>
+                <p
+                    data-aos='fade-right'
+                    data-aos-delay='400'
+                    data-aos-duration='900'
+                    className='text-3xl'>Choose, organise & customise</p>
+                <p
+                    data-aos='fade-right'
+                    data-aos-delay='400'
+                    data-aos-duration='900'
+                    class="mb-5 text-3xl">Your tool Trolly</p>
+                <button
+                    data-aos='zoom-in'
+                    data-aos-delay='1300'
+                    class="btn btn-primary">Get Started</button>
             </div>
         </div>
     );

@@ -15,7 +15,7 @@ const Reviews = () => {
     }
 
     return (
-        <div className='my-10'>
+        <div className='my-10 '>
             <div className="text-center text-2xl">Client Reviews</div>
             <div className='flex  justify-center'>
                 <img src={divider} alt="" />
@@ -28,6 +28,7 @@ const Reviews = () => {
                         <div class="card border p-5 bg-base-100">
 
                             <p>{d.review}</p>
+                            <small className='mt-3'>rating: {d.rating}</small>
                             <small className='mt-5'><UserCircleIcon className="h-5 w-5 inline text-gray-500" />{d.name}</small>
 
                         </div>

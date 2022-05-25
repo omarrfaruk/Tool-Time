@@ -2,7 +2,7 @@ import React from 'react';
 
 const Summary = () => {
     return (
-        <div className='my-16 bg-slate-300 py-11'>
+        <div className='my-16 bg-slate-300 py-11 font'>
             <div className='pb-10'>
                 <h1 className=' text-xl text-center  py-3'> What makes us difference from other tool Manufacturers</h1>
             </div>

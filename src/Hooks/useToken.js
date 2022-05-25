@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 
 const useToken = user => {
     const [token, setToken] = useState('');
+    console.log(token);
     useEffect(() => {
         const email = user?.user?.email;
         const currentUser = { email: email };
+        console.log(currentUser);
         if (email) {
             fetch(`http://localhost:5000/users/${email}`, {
                 method: 'PUT',
