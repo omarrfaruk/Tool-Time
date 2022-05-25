@@ -5,7 +5,6 @@ import './HomeBanner.css'
 const HomeBanner = () => {
     return (
         <div
-            className='font'
             style=
             {{
                 backgroundImage: `url(${banner})`,

@@ -20,7 +20,7 @@ const Reviews = () => {
             <div className='flex  justify-center'>
                 <img src={divider} alt="" />
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-3 px-32'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 lg:px-32'>
 
                 {
                     data?.map(d => <div className="card-body">

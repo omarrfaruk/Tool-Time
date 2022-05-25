@@ -32,12 +32,13 @@ const Navbar = ({ children }) => {
                         <ul className="menu menu-horizontal">
                             {/* <!-- Navbar menu content here --> */}
                             <li><NavLink to='/'>Home</NavLink></li>
-                            <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
-                            <li><NavLink to='/blogs'>Blogs</NavLink></li>
-
                             {
                                 user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
                             }
+                            <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
+                            <li><NavLink to='/blogs'>Blogs</NavLink></li>
+
+
                             <li><NavLink to='/register'>Register</NavLink></li>
                             {
                                 user ?

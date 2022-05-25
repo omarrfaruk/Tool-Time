@@ -11,7 +11,7 @@ const choose = () => {
             style=
             {{
                 backgroundImage: `url(${background})`,
-                height: '60vh',
+                height: '65vh',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
 
@@ -20,7 +20,7 @@ const choose = () => {
             <div className='flex  justify-center'>
                 <img src={divider} alt="" />
             </div>
-            <div className='mt-10 grid grid-cols-1 lg:grid-cols-3 gap-20'>
+            <div className='my-12 grid grid-cols-1 lg:grid-cols-3 gap-20 '>
                 <div>
                     <div className='flex justify-center'>
                         <img src={idea} alt="" />
@@ -31,7 +31,7 @@ const choose = () => {
                             Since 1978 weve been supplying the highest quality tools to a variety of specialist markets.</p>
                     </div>
                 </div>
-                <div>
+                <div className='sm:block hidden'>
                     <div className='flex justify-center'>
                         <img src={quality} alt="" />
                     </div>
@@ -40,8 +40,8 @@ const choose = () => {
                         <p>We have developed a culture of continuous improvement. We give guarantee against any manufacturing defect.</p>
                     </div>
                 </div>
-                <div>
-                    <div className='flex justify-center'>
+                <div className='sm:block hidden'>
+                    <div className='flex justify-center '>
                         <img src={support} alt="" />
                     </div>
                     <div className='text-white text-center'>

@@ -4,7 +4,7 @@ import AdminControl from './AdminControl';
 
 const MakeAdmin = () => {
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://secure-refuge-17271.herokuapp.com/users', {
+    const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('https://secure-refuge-17271.herokuapp.com/users', {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

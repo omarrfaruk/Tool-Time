@@ -24,12 +24,12 @@ const Purchase = () => {
         e.preventDefault()
         const inputValue = e.target.quantity.value;
         setTotal(inputValue)
-        // if (inputValue < details.Minimum) {
-        //     toast.error(`Quantity Must Be `)
-        // }
-        // else if (inputValue > details.available) {
-        //     toast.error(`You Can't Order More Than Stock`)
-        // }
+        if (parseInt(inputValue) < parseInt(details.Minimum)) {
+            toast.error(`Quantity Must Be equal minimum`)
+        }
+        else if (parseInt(inputValue) > parseInt(details.available)) {
+            toast.error(`You Can't Order More Than Stock`)
+        }
         // else {
         //     toast.success('Congretulation')
         // }
@@ -78,7 +78,7 @@ const Purchase = () => {
                                 </label>
                         }
                     </div>
-                    <Toaster></Toaster>
+
                 </div>
             </div>
             {

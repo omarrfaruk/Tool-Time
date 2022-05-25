@@ -7,6 +7,7 @@ import Choose from './Choose';
 import CustomerBase from './CustomerBase';
 import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
+import HomeCarousel from './HomeCarousel';
 
 const Home = () => {
     return (
@@ -15,7 +16,8 @@ const Home = () => {
             <Tools></Tools>
             <Choose></Choose>
             <Summary></Summary>
-            <CustomerBase></CustomerBase>
+            <HomeCarousel></HomeCarousel>
+            {/* <CustomerBase></CustomerBase> */}
             <Reviews></Reviews>
             <Footer></Footer>
         </div>
