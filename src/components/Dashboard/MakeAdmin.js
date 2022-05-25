@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query'; import auth from '../../firebase.init';
+import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import AdminControl from './AdminControl';
 
@@ -24,7 +24,6 @@ const MakeAdmin = () => {
                         <th></th>
                         <th>Name</th>
                         <th>name</th>
-
                         <th>name</th>
                     </tr>
                 </thead>
