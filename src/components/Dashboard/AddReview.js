@@ -13,7 +13,7 @@ const AddReview = () => {
             review: reviewValue,
             rating: rating
         };
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://secure-refuge-17271.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -30,17 +30,17 @@ const AddReview = () => {
     return (
 
         <div className='h-screen mt-16'>
-            <div class="card w-96 mx-auto bg-base-100 shadow-xl">
-                <div class="card-body">
+            <div className="card w-96 mx-auto bg-base-100 shadow-xl">
+                <div className="card-body">
                     <h2 className='text-xl bold text-center'>Share Your Opinion</h2>
                     <form
                         onSubmit={handleReview}
                         className='grid gap-5'>
-                        <input type="text" value={user?.displayName} class="input input-bordered w-full max-w-xs" />
-                        <textarea type="text" name='Review' placeholder="Write Your Opinion" class="textarea input-bordered w-full max-w-xs" required />
+                        <input type="text" value={user?.displayName} className="input input-bordered w-full max-w-xs" />
+                        <textarea type="text" name='Review' placeholder="Write Your Opinion" className="textarea input-bordered w-full max-w-xs" required />
                         <select
                             name='rating'
-                            class="select w-full max-w-xs  select-bordered">
+                            className="select w-full max-w-xs  select-bordered">
                             <option disabled selected>rate us</option>
                             <option>5</option>
                             <option>4</option>
@@ -48,7 +48,7 @@ const AddReview = () => {
                             <option>2</option>
                             <option>1</option>
                         </select>
-                        <input type="submit" class="input btn btn-outline input-bordered w-full max-w-xs" />
+                        <input type="submit" className="input btn btn-outline input-bordered w-full max-w-xs" />
                     </form>
                 </div>
             </div>

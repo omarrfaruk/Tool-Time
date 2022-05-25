@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 
-const PurchaseModal = ({ details, orderQuantity }) => {
+const PurchaseModal = ({ details, setDetails, orderQuantity }) => {
     const [user] = useAuthState(auth)
 
     const handleModal = (e) => {
@@ -19,7 +19,7 @@ const PurchaseModal = ({ details, orderQuantity }) => {
 
         }
         console.log(orderDetails);
-        const url = 'http://localhost:5000/orders'
+        const url = 'https://secure-refuge-17271.herokuapp.com/orders'
         fetch(url, {
             method: 'POST',
             headers: {
@@ -31,6 +31,7 @@ const PurchaseModal = ({ details, orderQuantity }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                // setDetails('')
             })
     }
 
@@ -38,39 +39,39 @@ const PurchaseModal = ({ details, orderQuantity }) => {
     return (
         <div>
 
-            <input type="checkbox" id="purchase-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle ">
-                <div class="modal-box mx-auto">
-                    <label for="purchase-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 class="font-bold text-center mb-5 text-2xl">{details?.name}</h3>
+            <input type="checkbox" id="purchase-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle ">
+                <div className="modal-box mx-auto">
+                    <label for="purchase-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="font-bold text-center mb-5 text-2xl">{details?.name}</h3>
                     <form onSubmit={handleModal} className='grid grid-cols-1  justify-items-center'>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Name</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Name</span>
                             </label>
-                            <input type="text" value={user?.displayName} readOnly class="input input-bordered w-full max-w-xs" />
+                            <input type="text" value={user?.displayName} readOnly className="input input-bordered w-full max-w-xs" />
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
-                            <input type="text" value={user?.email} readOnly class="input input-bordered w-full max-w-xs" />
+                            <input type="text" value={user?.email} readOnly className="input input-bordered w-full max-w-xs" />
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Quantity</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Quantity</span>
                             </label>
-                            <input type="text" name='quantity' value={orderQuantity + 'pcs'} class="input input-bordered w-full max-w-xs" />
+                            <input type="text" name='quantity' value={orderQuantity + 'pcs'} className="input input-bordered w-full max-w-xs" />
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Total Price</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Total Price</span>
                             </label>
-                            <input type="text" name='price' value={'Price:$' + orderQuantity * details.price} class="input input-bordered w-full max-w-xs" />
+                            <input type="text" name='price' value={'Price:$' + orderQuantity * details.price} className="input input-bordered w-full max-w-xs" />
                         </div>
-                        <input type="text" name='address' placeholder="Address" class="input my-3 input-bordered w-full   max-w-xs" />
-                        <input type="text" name='number' placeholder="Contact Number" class="input mb-2 input-bordered w-full max-w-xs" />
-                        <input type="submit" value='Place Order' class="input input-bordered  hover:bg-slate-400 hover:text-white font-bold w-full max-w-xs" />
+                        <input type="text" name='address' placeholder="Address" className="input my-3 input-bordered w-full   max-w-xs" />
+                        <input type="text" name='number' placeholder="Contact Number" className="input mb-2 input-bordered w-full max-w-xs" />
+                        <input type="submit" value='Place Order' className="input input-bordered  hover:bg-slate-400 hover:text-white font-bold w-full max-w-xs" />
                     </form>
                 </div>
             </div>

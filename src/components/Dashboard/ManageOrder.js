@@ -4,14 +4,14 @@ import Loading from '../Shared/Loading';
 
 const ManageOrder = () => {
 
-    const { data: orders, isLoading } = useQuery('orders', () => fetch('http://localhost:5000/orders/admin').then(res => res.json()))
+    const { data: orders, isLoading } = useQuery('orders', () => fetch('https://secure-refuge-17271.herokuapp.com/orders/admin').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
     }
     return (
-        <div class="overflow-x-auto">
-            <table class="table w-full">
+        <div className="overflow-x-auto">
+            <table className="table w-full">
                 {/* <!-- head --> */}
                 <thead>
                     <tr>

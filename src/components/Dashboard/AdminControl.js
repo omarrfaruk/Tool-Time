@@ -5,7 +5,7 @@ const AdminControl = ({ d, index, refetch }) => {
 
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${d.email}`, {
+        fetch(`https://secure-refuge-17271.herokuapp.com/users/admin/${d.email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

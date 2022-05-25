@@ -22,7 +22,7 @@ const HomeBanner = () => {
                     data-aos='fade-right'
                     data-aos-duration='1000'
                     data-aos-delay='200'
-                    class="mb-5  text-7xl font-bold uppercase">Customized Solutions</h1>
+                    className="mb-5  text-7xl font-bold uppercase">Customized Solutions</h1>
                 <p
                     data-aos='fade-right'
                     data-aos-delay='400'
@@ -32,11 +32,11 @@ const HomeBanner = () => {
                     data-aos='fade-right'
                     data-aos-delay='400'
                     data-aos-duration='900'
-                    class="mb-5 text-3xl">Your tool Trolly</p>
+                    className="mb-5 text-3xl">Your tool Trolly</p>
                 <button
                     data-aos='zoom-in'
                     data-aos-delay='1300'
-                    class="btn btn-primary">Get Started</button>
+                    className="btn px-5 bg-black">Get Started</button>
             </div>
         </div>
     );

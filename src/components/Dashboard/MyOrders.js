@@ -15,7 +15,7 @@ const MyOrders = () => {
 
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${customerEmail}`, {
+        fetch(`https://secure-refuge-17271.herokuapp.com/orders?email=${customerEmail}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -38,7 +38,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const sure = window.confirm('Are You Sure?')
         if (sure) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://secure-refuge-17271.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
@@ -52,8 +52,8 @@ const MyOrders = () => {
 
 
     return (
-        <div class="overflow-x-auto m-10">
-            <table class="table w-full">
+        <div className="overflow-x-auto m-10">
+            <table className="table w-full">
                 {/* <!-- head --> */}
                 <thead>
                     <tr>

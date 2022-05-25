@@ -15,7 +15,7 @@ const AddProduct = () => {
             img: e.target.img.value
         }
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://secure-refuge-17271.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -37,13 +37,13 @@ const AddProduct = () => {
             <form
                 onSubmit={handleAddProduct}
                 className='grid grid-cols-1 justify-items-center  gap-3'>
-                <input type="text" name='name' placeholder="PRODUCT NAME" required class="input input-bordered w-full max-w-xs" />
-                <textarea type="text" name='description' placeholder="DESCRIPTION" required class="textarea input-bordered w-full max-w-xs" />
-                <input type="text" name='price' placeholder="PRICE" required class="input input-bordered w-full max-w-xs" />
-                <input type="text" name='quantity' placeholder="AVAILABLE QUANTITY" required class="input input-bordered w-full max-w-xs" />
-                <input type="text" name='minimum' placeholder="MINIMUM ORDER" required class="input input-bordered w-full max-w-xs" />
-                <input type="text" name='img' placeholder="Type here" required class="input input-bordered w-full max-w-xs" />
-                <input type="submit" value='ADD' class="input input-bordered w-full max-w-xs" />
+                <input type="text" name='name' placeholder="PRODUCT NAME" required className="input input-bordered w-full max-w-xs" />
+                <textarea type="text" name='description' placeholder="DESCRIPTION" required className="textarea input-bordered w-full max-w-xs" />
+                <input type="text" name='price' placeholder="PRICE" required className="input input-bordered w-full max-w-xs" />
+                <input type="text" name='quantity' placeholder="AVAILABLE QUANTITY" required className="input input-bordered w-full max-w-xs" />
+                <input type="text" name='minimum' placeholder="MINIMUM ORDER" required className="input input-bordered w-full max-w-xs" />
+                <input type="text" name='img' placeholder="Type here" required className="input input-bordered w-full max-w-xs" />
+                <input type="submit" value='ADD' className="input input-bordered w-full max-w-xs" />
             </form>
         </div>
     );

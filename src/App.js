@@ -20,6 +20,8 @@ import RequireAdmin from "./components/Shared/RequireAdmin";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import Portfolio from "./ETC/Portfolio";
+import Blogs from "./ETC/Blogs";
 
 function App() {
 
@@ -36,6 +38,8 @@ function App() {
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
+          <Route path="portfolio" element={<Portfolio></Portfolio>}></Route>
+          <Route path="blogs" element={<Blogs></Blogs>}></Route>
           <Route path='/purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
           <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
             <Route path="myorders" element={<MyOrders />}></Route>
@@ -44,8 +48,10 @@ function App() {
             <Route path="manageorder" element={<ManageOrder />}></Route>
             <Route path="addproduct" element={<AddProduct />}></Route>
             <Route path="makeadmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
-            <Route path="manageproducts" element={<ManageProducts />}></Route>
+            <Route path="manageproducts" element={<ManageProducts />}>
+            </Route>
             <Route path="updateprofile" element={<UpdateProfile />}></Route>
+
           </Route>
           <Route path='*' element={<NotFound />}></Route>
         </Routes>

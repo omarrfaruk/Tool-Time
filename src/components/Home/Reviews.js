@@ -8,7 +8,7 @@ import Loading from '../Shared/Loading';
 
 const Reviews = () => {
 
-    const { data, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/reviews').then(res => res.json()))
+    const { data, isLoading } = useQuery('reviews', () => fetch('https://secure-refuge-17271.herokuapp.com/reviews').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
@@ -23,9 +23,9 @@ const Reviews = () => {
             <div className='grid grid-cols-1 lg:grid-cols-3 px-32'>
 
                 {
-                    data?.map(d => <div class="card-body">
+                    data?.map(d => <div className="card-body">
 
-                        <div class="card border p-5 bg-base-100">
+                        <div className="card border p-5 bg-base-100">
 
                             <p>{d.review}</p>
                             <small className='mt-3'>rating: {d.rating}</small>

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import auth from '../../firebase.init';
 import ima from '../../assests/images/cartoon-boy-images-4.jpg'
 import { Link } from 'react-router-dom';
@@ -13,23 +12,23 @@ const MyProfile = () => {
 
 
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading } = useQuery('users', () => fetch('https://secure-refuge-17271.herokuapp.com/user', {
         method: "GET",
         headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            email: user?.email
         }
     }).then(res => res.json()))
 
-    console.log(users);
 
     if (isLoading) {
         return <Loading></Loading>
     }
 
+
     return (
         <div>
-            <div class="avatar grid justify-items-center mb-[-90px]">
-                <div class="w-44 rounded-full ">
+            <div className="avatar grid justify-items-center mb-[-90px]">
+                <div className="w-44 rounded-full ">
                     <img src={user?.photoURL || ima} alt='' />
                 </div>
             </div>
@@ -37,7 +36,8 @@ const MyProfile = () => {
                 <div className='flex-auto w-2/5 text-center lg:mt-20 text-white-300'>
                     <p className=''>{user?.displayName}</p>
                     <p className=''>{user?.email}</p>
-                    {/* <p>{users.}</p> */}
+                    <p>{users?.address}</p>
+                    <p>{users?.phone}</p>
                 </div>
 
                 <div className='flex-auto w-2/5 text-center items-center lg:mt-20'>

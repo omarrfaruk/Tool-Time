@@ -12,7 +12,7 @@ const Purchase = () => {
     const orderQuantity = parseInt(total)
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://secure-refuge-17271.herokuapp.com/product/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -47,14 +47,14 @@ const Purchase = () => {
                 }}>
                 <h1 className='text-5xl font-serif font-bold sm:pt-10 lg:pl-60 lg:pt-40 text-white'>{details.name}</h1>
             </div>
-            <div class="w-4/5 mx-auto mt-28 mb-20 rounded bg-slate-300">
-                <div class="hero-content flex-col lg:flex-row-reverse">
+            <div className="w-4/5 mx-auto mt-28 mb-20 rounded bg-slate-300">
+                <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className=' rounded lg:w-2/4 bg-white'>
-                        <img src={details.img} alt='' class=" rounded-lg " />
+                        <img src={details.img} alt='' className=" rounded-lg " />
                     </div>
                     <div className=' lg:w-2/4 font-serif lg:mr-60'>
-                        <h1 class="text-3xl font-bold">{details.name}</h1>
-                        <p class="py-6">{details.description}</p>
+                        <h1 className="text-3xl font-bold">{details.name}</h1>
+                        <p className="py-6">{details.description}</p>
                         <p><small>Price: {details.price}</small></p>
                         <p><small>Available: {details.available}</small></p>
                         <p><small>Minimum Order: {details.Minimum}</small></p>
@@ -68,13 +68,13 @@ const Purchase = () => {
                             orderQuantity > details.Minimum && orderQuantity <= details.available ?
                                 <label
                                     for="purchase-modal"
-                                    class="btn btn-outline btn-sm">PURCHASE
+                                    className="btn btn-outline btn-sm">PURCHASE
                                 </label>
                                 :
                                 <label
                                     disabled
                                     for="purchase-modal"
-                                    class="btn btn-outline btn-sm">PURCHASE
+                                    className="btn btn-outline btn-sm">PURCHASE
                                 </label>
                         }
                     </div>
@@ -82,7 +82,7 @@ const Purchase = () => {
                 </div>
             </div>
             {
-                details && <PurchaseModal orderQuantity={orderQuantity} details={details} ></PurchaseModal>
+                details && <PurchaseModal orderQuantity={orderQuantity} setDetails={setDetails} details={details} ></PurchaseModal>
             }
         </div >
     );

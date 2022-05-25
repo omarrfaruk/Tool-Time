@@ -4,7 +4,7 @@ import AdminControl from './AdminControl';
 
 const MakeAdmin = () => {
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://secure-refuge-17271.herokuapp.com/users', {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -16,8 +16,8 @@ const MakeAdmin = () => {
     }
 
     return (
-        <div class="overflow-x-auto m-10">
-            <table class="table w-full">
+        <div className="overflow-x-auto m-10">
+            <table className="table w-full">
                 {/* <!-- head --> */}
                 <thead>
                     <tr>
