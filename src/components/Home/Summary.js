@@ -6,7 +6,7 @@ import operation from '../../assests/images/operation.png'
 
 const Summary = () => {
     return (
-        <div className='mt-20'>
+        <div className='mt-14'>
             <h1 className='text-2xl text-center pb-7'>What Makes Us Different from other tool Manufacturers?
             </h1>
             <div className='grid grid-cols-1 lg:grid-cols-4 mx-10'>

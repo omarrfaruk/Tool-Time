@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading';
 import CheckoutForm from './CheckoutForm';
 
 
-const stripePromise = loadStripe('sk_test_51L3YPwIPu9QtKCLZOWIy5z2ZC88pNJacykblvo5EZUwfsqXSbbZnKTGAiuN1Djakibt9A2DOHlIuntZNNw12AA4400TILdFXP1');
+const stripePromise = loadStripe('pk_test_51L3YPwIPu9QtKCLZn4S5a9mXsv4pTGnQGWY3ZqBrO3zrhn67c5Lf1ri3xtu6ybCeQPnd3ghA5gZ3Y33lZYqN0Ie600boPsNvxB');
 
 
 const Payment = () => {
@@ -25,16 +25,15 @@ const Payment = () => {
     }
 
     return (
-        <div>
-            <h2>payment for {id}</h2>
-            <div class="card w-96 bg-base-100 shadow-xl">
+        <div className='grid grid-cols-1 gap-5 justify-items-center mt-20'>
+            <div class="card w-96 bg-base-100 shadow-sm">
                 <div class="card-body">
-                    <h2 class="card-title">Hello {data?.customerName}</h2>
+                    <h2 class="card-title text-orange-400">Hello {data?.customerName}</h2>
                     <p>Please Pay for {data?.productName} ${data?.price}</p>
 
                 </div>
             </div>
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card w-96 bg-base-100 shadow-sm ">
                 <div class="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm data={data} />

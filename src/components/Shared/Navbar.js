@@ -49,7 +49,7 @@ const Navbar = ({ children }) => {
                         </ul>
                     </div>
                     <Link to='/dashboard'>
-                        <div className="avatar">
+                        <div className="avatar hidden lg:block">
                             <div className="w-8 rounded-full">
                                 <img src={user && (user?.photoURL || img)} alt="" />
                             </div>
@@ -74,6 +74,10 @@ const Navbar = ({ children }) => {
                     {
                         user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
                     }
+                    <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
+                    <li><NavLink to='/blogs'>Blogs</NavLink></li>
+
+
                     <li><NavLink to='/register'>Register</NavLink></li>
                     {
                         user ?

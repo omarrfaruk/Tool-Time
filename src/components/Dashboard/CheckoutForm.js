@@ -7,9 +7,11 @@ const CheckoutForm = ({ data }) => {
     const elements = useElements()
     const [paymentError, setPaymentError] = useState('')
     const [success, setSuccess] = useState('')
+    const [processing, setProcessing] = useState(false)
+    const [transactionId, setTransactionId] = useState('')
     const [clientSecret, setClientSecret] = useState('')
 
-    const { price, customerName, customerEmail } = data;
+    const { _id, price, customerName, customerEmail } = data;
 
     useEffect(() => {
         fetch(`http://localhost:5000/create-payment-intent`, {
@@ -49,18 +51,7 @@ const CheckoutForm = ({ data }) => {
 
         setPaymentError(error?.message || '')
         setSuccess('')
-        // const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
-        //     clientSecret,
-        //     {
-        //         payment_method: {
-        //             card: card,
-        //             billing_details: {
-        //                 name: customerName,
-        //                 email: customerEmail
-        //             },
-        //         },
-        //     },
-        // );
+        setProcessing(true)
 
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
@@ -78,12 +69,32 @@ const CheckoutForm = ({ data }) => {
 
         if (intentError) {
             setPaymentError(intentError?.message)
-
+            setProcessing(false)
         }
         else {
             setPaymentError('')
             console.log(paymentIntent);
+            setTransactionId(paymentIntent.id)
             setSuccess('Congrats!! Your payment is complete')
+
+            const payment = {
+                appointment: _id,
+                transactionId: paymentIntent.id
+            }
+
+            fetch(`http://localhost:5000/order/${_id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment)
+            }).then(res => res.json())
+                .then(data => {
+                    setProcessing(false);
+                    console.log(data);
+                })
+
         }
     }
 
@@ -105,8 +116,9 @@ const CheckoutForm = ({ data }) => {
                             },
                         },
                     }}
+                    className='border-2 p-2'
                 />
-                <button className='btn btn-sm' type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn btn-sm bg-orange-400 mt-4' type="submit" disabled={!stripe || !clientSecret}>
                     Pay
                 </button>
             </form>
@@ -114,7 +126,10 @@ const CheckoutForm = ({ data }) => {
                 paymentError && <p className='text-red-500'>{paymentError}</p>
             }
             {
-                success && <p className='text-gray-400'>{success}</p>
+                success && <div className='text-gray-500'>
+                    <p>{success}</p>
+                    <p>your transaction id is {transactionId}</p>
+                </div>
             }
         </>
     );

@@ -1,11 +1,10 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 
 const ManageProducts = () => {
 
-    const { data: product, isLoading } = useQuery('orders', () => fetch('https://secure-refuge-17271.herokuapp.com/product').then(res => res.json()))
+    const { data: product, isLoading, refetch } = useQuery('orders', () => fetch('https://secure-refuge-17271.herokuapp.com/product').then(res => res.json()))
 
 
     if (isLoading) {
@@ -21,7 +20,8 @@ const ManageProducts = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
+                    refetch()
                 })
         }
 

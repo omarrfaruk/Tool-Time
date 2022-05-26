@@ -27,7 +27,7 @@ const Reviews = () => {
 
                         <div className="card border p-5 bg-base-100">
 
-                            <p>{d.review}</p>
+                            <p>{d.review.slice(0, 200)}</p>
                             <small className='mt-3'>rating: {d.rating}</small>
                             <small className='mt-5'><UserCircleIcon className="h-5 w-5 inline text-gray-500" />{d.name}</small>
 

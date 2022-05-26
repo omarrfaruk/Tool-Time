@@ -16,22 +16,22 @@ const HomeBanner = () => {
                 backgroundPosition: 'center',
             }}
         >
-            <div className=' lg:pt-28 lg:pl-96 text-white'>
+            <div className=' lg:pt-28 p-3 pt-6 lg:pl-96 text-white'>
                 <h1
                     data-aos='fade-right'
                     data-aos-duration='1000'
                     data-aos-delay='200'
-                    className="mb-5  text-7xl font-bold uppercase">Customized Solutions</h1>
+                    className="mb-5 text-4xl  lg:text-7xl font-bold uppercase">Customized Solutions</h1>
                 <p
                     data-aos='fade-right'
                     data-aos-delay='400'
                     data-aos-duration='900'
-                    className='text-3xl'>Choose, organise & customise</p>
+                    className='lg:text-3xl text-xl'>Choose, organise & customise</p>
                 <p
                     data-aos='fade-right'
                     data-aos-delay='400'
                     data-aos-duration='900'
-                    className="mb-5 text-3xl">Your tool Trolly</p>
+                    className="mb-5 lg:text-3xl text-xl">Your tool Trolly</p>
                 <button
                     data-aos='zoom-in'
                     data-aos-delay='1300'
