@@ -9,7 +9,10 @@ const Tools = () => {
     useEffect(() => {
         fetch('https://secure-refuge-17271.herokuapp.com/product')
             .then(res => res.json())
-            .then(data => setProducts(data.reverse()))
+            .then(data => {
+                console.log(data);
+                setProducts(data.reverse())
+            })
 
     }, [])
 

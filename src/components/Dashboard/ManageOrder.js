@@ -1,14 +1,20 @@
-import React from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading';
+import React, { useEffect, useState } from 'react';
 
 const ManageOrder = () => {
 
-    const { data: orders, isLoading } = useQuery('orders', () => fetch('https://secure-refuge-17271.herokuapp.com/orders/admin').then(res => res.json()))
 
-    if (isLoading) {
-        return <Loading />
-    }
+    const [orders, setOrders] = useState([])
+
+    useEffect(() => {
+        fetch('https://secure-refuge-17271.herokuapp.com/order')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setOrders(data)
+            })
+    })
+
+
     return (
         <div className="overflow-x-auto">
             <table className="table w-full">
