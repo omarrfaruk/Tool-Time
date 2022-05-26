@@ -9,7 +9,7 @@ const ManageOrder = () => {
         fetch('https://secure-refuge-17271.herokuapp.com/order')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setOrders(data)
             })
     })
