@@ -1,10 +1,13 @@
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
 import AdminControl from './AdminControl';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const MakeAdmin = () => {
+    const [user] = useAuthState(auth)
 
-    const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('https://secure-refuge-17271.herokuapp.com/users', {
+    const { data: users, isLoading, refetch } = useQuery(['users', user], () => fetch('https://secure-refuge-17271.herokuapp.com/users', {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

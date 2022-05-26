@@ -22,6 +22,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import Portfolio from "./ETC/Portfolio";
 import Blogs from "./ETC/Blogs";
+import Payment from "./components/Dashboard/Payment";
 
 function App() {
 
@@ -48,9 +49,9 @@ function App() {
             <Route path="manageorder" element={<ManageOrder />}></Route>
             <Route path="addproduct" element={<AddProduct />}></Route>
             <Route path="makeadmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
-            <Route path="manageproducts" element={<ManageProducts />}>
-            </Route>
+            <Route path="manageproducts" element={<ManageProducts />}></Route>
             <Route path="updateprofile" element={<UpdateProfile />}></Route>
+            <Route path="payment/:id" element={<Payment />}></Route>
 
           </Route>
           <Route path='*' element={<NotFound />}></Route>
