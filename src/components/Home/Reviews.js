@@ -1,9 +1,8 @@
 import React from 'react';
 import divider from '../../assests/images/Ozar_O2-1.png'
-import { UserCircleIcon, UserIcon } from '@heroicons/react/solid'
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
-
+import { UserCircleIcon } from '@heroicons/react/solid'
 
 
 const Reviews = () => {

@@ -127,6 +127,7 @@ const Register = () => {
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline"
                     >Continue with Google</button>
+
                 </div>
             </div>
         </div >

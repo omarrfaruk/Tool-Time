@@ -21,7 +21,7 @@ const Portfolio = () => {
                     <h1
                         style={{ fontFamily: ' poppins', color: 'rgba(100, 107, 109, 0.824)' }}
                         className='text-5xl font-bold'>
-                        <strong>TAREK RAHMAN</strong>
+                        <strong>OMAR FARUK</strong>
                     </h1>
                     <p className='text-xl mt-4'>I am a frontend  developer from</p>
                     <p className='text-xl'>Dhaka, Bangladesh</p>
@@ -30,7 +30,7 @@ const Portfolio = () => {
             <div class="mt-40 bg-base-100 grid grid-cols-1 lg:grid-cols-2">
                 <div className='lg:mx-32 mx-5'>
                     <h1 class="text-3xl font-bold">About Me</h1>
-                    <p class="py-6">Hello! My name is Tarek and I enjoy creating things that live on the internet. My interest in web development started back in 2020 when I decided to try web designing — that taught me a lot about HTML & CSS!</p>
+                    <p class="py-6">Hello! My name is Omar Faruk and I enjoy creating things that live on the internet. My interest in web development started back in 2020 when I decided to try web designing — that taught me a lot about HTML & CSS!</p>
                 </div>
                 <div className='lg:mx-32 mx-5  lg:mt-52'>
                     <h1 class="text-3xl font-bold">Objective</h1>
