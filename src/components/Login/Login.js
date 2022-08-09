@@ -107,7 +107,10 @@ const Login = () => {
                     >
                         Continue with Google
                     </button>
-
+                    <div className='pt-7 flex flex-row justify-between items-center'>
+                        <button onClick={() => signInWithEmailAndPassword('admin@g.co', 'admin@@@')} className='py-2 px-4 bg-indigo-700 text-slate-50 mr-5 rounded-md'>Demo Login - Admin</button>
+                        <button onClick={() => signInWithEmailAndPassword('user@g.com', 'user@@@@')} className='py-2 px-4 bg-orange-700 text-slate-50 rounded-md'>Demo Login - User</button>
+                    </div>
                 </div>
             </div>
         </div >
