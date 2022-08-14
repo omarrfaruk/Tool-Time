@@ -8,6 +8,7 @@ import CustomerBase from './CustomerBase';
 import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import HomeCarousel from './HomeCarousel';
+import Featured from './Featured';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <HomeBanner></HomeBanner>
             <Summary></Summary>
             <Tools></Tools>
+            <Featured />
             <Choose></Choose>
             <HomeCarousel></HomeCarousel>
             <Reviews></Reviews>
