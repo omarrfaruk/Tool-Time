@@ -4,8 +4,6 @@ import Reviews from './Reviews';
 import Summary from './Summary';
 import Tools from './Tools';
 import Choose from './Choose';
-import CustomerBase from './CustomerBase';
-import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import HomeCarousel from './HomeCarousel';
 import Featured from './Featured';
